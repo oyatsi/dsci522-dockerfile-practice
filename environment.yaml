@@ -1,0 +1,8 @@
+name: DSCI_522_Assignment_2
+channels:
+  - conda-forge
+dependencies:
+  - scipy=1.15
+  - pandas=2.2.3
+  - numpy=2.2.3
+  - python=3.12
