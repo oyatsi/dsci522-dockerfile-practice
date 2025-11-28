@@ -1,5 +1,5 @@
-# Use the jupyter minimal notebook to create the image base
-FROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8
+# Use the lastest miniforge image to create the image base
+FROM condaforge/miniforge3:latest
 
 # Copy the conda lock file from the github repo and create a directory to create the conda-lock file
 COPY conda-linux-64.lock conda-linux-64.lock
