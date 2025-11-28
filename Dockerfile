@@ -2,13 +2,13 @@
 FROM quay.io/jupyter/minimal-notebook:afe30f0c9ad8
 
 # Copy the conda lock file from the github repo and create a directory to create the conda-lock file
-COPY conda-linux-64.lock /tmp/conda-linux-64.lock
+COPY conda-linux-64.lock conda-linux-64.lock
 
 # setup conda-lock in Docker
 RUN conda install -n base -c conda-forge conda-lock -y
 
 # install packages from lockfile into dockerlock environment
-RUN conda-lock install -n dockerlock /tmp/conda-lock.yml
+RUN conda-lock install -n dockerlock conda-lock.yml
 
 # # make dockerlock the default environment
 RUN echo "source /opt/conda/etc/profile.d/conda.sh && conda activate dockerlock" >> ~/.bashrc
