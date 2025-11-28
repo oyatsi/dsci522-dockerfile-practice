@@ -8,7 +8,7 @@ COPY conda-linux-64.lock conda-linux-64.lock
 RUN conda install -n base -c conda-forge conda-lock -y
 
 # install packages from lockfile into DSCI_522_Assignment_2 environment
-RUN conda-lock install -n DSCI_522_Assignment_2 conda-lock.yml
+RUN conda-lock install -n DSCI_522_Assignment_2 conda-lock.yml --no-mamba
 
 # # make DSCI_522_Assignment_2 the default environment
 RUN echo "source /opt/conda/etc/profile.d/conda.sh && conda activate DSCI_522_Assignment_2" >> ~/.bashrc
