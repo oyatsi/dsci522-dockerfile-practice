@@ -2,7 +2,7 @@
 FROM condaforge/miniforge3:latest
 
 # copy the lockfile into the container
-COPY conda-linux-64.lock conda-linux-64.lock
+COPY conda-lock.yml conda-lock.yml
 
 # setup conda-lock
 RUN conda install -n base -c conda-forge conda-lock -y
